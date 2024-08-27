@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.20.0)
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
+
+project(led_01)
+
+target_sources(app PRIVATE src/main.c)
+
+if(CONFIG_XIAO_BLE_APP_LED_INIT)
+    zephyr_library_sources(src/app_led_init.c)
+endif()

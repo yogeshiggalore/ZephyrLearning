@@ -1,0 +1,18 @@
+/ {
+    gpiocustom {
+        compatible = "gpio-keys";
+        appled: appled_0 {
+            gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
+            label = "app led 0";
+        };
+    };
+    aliases {
+        appled = &appled;
+    };
+};
+
+&timer2{
+    status = "okay";
+    compatible = "nordic,nrf-timer";
+    status = "okay";
+};
